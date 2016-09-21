@@ -1,0 +1,8 @@
+from django.shortcuts import render
+from .models import AMP
+from .models import Non_AMP
+# Create your views here.
+
+def home(request):
+    amp = Amp.object.all()
+    return render(request, 'dbquery/home.html', {'amp':amp})

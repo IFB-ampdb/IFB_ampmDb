@@ -1,0 +1,194 @@
+{% extends 'dbquery/base.html' %}
+{% block content %}
+{% load staticfiles %}
+<section>
+  <div class="container">
+  <div class="col-lg-3 col-md-5 col-md-offset-0 col-lg-offset-0">
+      <div class="well">
+        <h3 class="text-center">Quick Search</h3>
+        <form method="POST" class="form-horizontal">
+          <div class="form-group">
+            <label for="Type" class="control-label">&nbsp;AMP or Non-AMP</label>
+            <select class="form-control" name="" id="Type">
+              <option value="">Any</option>
+              <option value="">AMP</option>
+              <option value="">Non-AMP</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="id" class="control-label"> PDB ID</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="id" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="name" class="control-label">&nbsp;Name</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="name" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <p class="text-center"><button type="submit" ><a href="#" class="btn btn-danger" role="button">Search </a></button></p>
+        </form>
+      </div>
+      <hr>
+      <a href="/search/"><div class=" text-center well"><h3>ADVANCED SEARCH</h3></div></a>
+      </div>
+      <div class=" col-lg-9 col-md-7">
+
+
+        <div class="media-object-default">
+          <div class="media">
+          
+            {% for amp in amp %}
+            <div class="media-body">
+              <p>Name : {{amp.name}}</p>
+              <p>ID : {{amp.id}}</p>
+             </div>
+             {% endfor %}
+            
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+<div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+          <div class="thumbnail"> <img src="{% static 'images/400X200.gif' %}" alt="Thumbnail Image 1" class="img-responsive">
+            <div class="caption">
+              <h3>Heading</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <hr>
+              <p class="text-center"><a href="#" class="btn btn-success" role="button">AMP</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+          <div class="thumbnail"> <img src="{% static 'images/400X200.gif' %}" alt="Thumbnail Image 1" class="img-responsive">
+            <div class="caption">
+              <h3>Heading</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <hr>
+              <p class="text-center"><a href="#" class="btn btn-info" role="button">NON AMP</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 hidden-sm hidden-xs">
+          <div class="thumbnail"> <img src="{% static 'images/400X200.gif' %}" alt="Thumbnail Image 1" class="img-responsive">
+            <div class="caption">
+              <h3>Heading</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <hr>
+              <p class="text-center"><a href="#" class="btn btn-success" role="button">AMP</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+          <div class="thumbnail"> <img src="{% static 'images/400X200.gif' %}" alt="Thumbnail Image 1" class="img-responsive">
+            <div class="caption">
+              <h3>Heading</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <hr>
+              <p class="text-center"><a href="#" class="btn btn-info" role="button">NON AMP</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+          <div class="thumbnail"> <img src="images/400X200.gif" alt="Thumbnail Image 1" class="img-responsive">
+            <div class="caption">
+              <h3>Heading</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <hr>
+              <p class="text-center"><a href="#" class="btn btn-primary btn-success" role="button">AMP</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 hidden-sm hidden-xs">
+          <div class="thumbnail"> <img src="{% static 'images/400X200.gif' %}" alt="Thumbnail Image 1" class="img-responsive">
+            <div class="caption">
+              <h3>Heading</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <hr>
+              <p class="text-center"><a href="#" class="btn btn-info" role="button">NON AMP</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h3>New Peptides</h3>
+        <hr>
+        <div class="row">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="text-center"> <img src="{% static 'images/72X72.gif' %}" alt="Thumbnail Image 1"> </div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="text-center"> <img src="{% static 'images/72X72.gif' %}" alt="Thumbnail Image 1"></div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="text-center"> <img src="{% static 'images/72X72.gif' %}" alt="Thumbnail Image 1"></div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="text-center"> <img src="{% static 'images/72X72.gif' %}" alt="Thumbnail Image 1"></div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="text-center"> <img src="{% static 'images/72X72.gif' %}" alt="Thumbnail Image 1"></div>
+</div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="text-center"> <img src="{% static 'images/72X72.gif' %}" alt="Thumbnail Image 1"></div>
+</div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="text-center"> <img src="{% static 'images/72X72.gif' %}" alt="Thumbnail Image 1"></div>
+</div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="text-center"> <img src="{% static 'images/72X72.gif' %}" alt="Thumbnail Image 1"></div>
+</div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="text-center"> <img src="{% static 'images/72X72.gif' %}" alt="Thumbnail Image 1"></div>
+</div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <h3>Our Services</h3>
+        <hr>
+        <ul id="myTab1" class="nav nav-tabs">
+          <li class="active"> <a href="#home1" data-toggle="tab"> Tab Panel 1 </a> </li>
+          <li><a href="#pane2" data-toggle="tab">Tab Panel 2</a></li>
+          <li> <a href="#pane3" data-toggle="tab">Tab Panel 3</a> </li>
+        </ul>
+        <div id="myTabContent1" class="tab-content">
+          <div class="tab-pane fade in active" id="home1">
+            <p class="text-center"><img src="images/3b536b.gif" alt=""></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus maxime aut ea impedit voluptates aperiam dolor laborum officiis autem aspernatur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, alias, repudiandae sunt illo consequatur aperiam doloribus nesciunt ut deserunt ipsa est tempora nihil. Totam eveniet aperiam debitis fugit ipsa doloremque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio sequi dolorem suscipit assumenda molestiae voluptatem qui consequuntur magni? Deleniti, corporis.</p>
+          </div>
+          <div class="tab-pane fade" id="pane2">
+            <p class="text-center"><img src="images/9b59b6.gif" alt=""></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus maxime aut ea impedit voluptates aperiam dolor laborum officiis autem aspernatur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, alias, repudiandae sunt illo consequatur aperiam doloribus nesciunt ut deserunt ipsa est tempora nihil. Totam eveniet aperiam debitis fugit ipsa doloremque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio sequi dolorem suscipit assumenda molestiae voluptatem qui consequuntur magni? Deleniti, corporis.</p>
+          </div>
+          <div class="tab-pane fade" id="pane3">
+            <p class="text-center"><img src="images/16a085.gif" alt=""></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus maxime aut ea impedit voluptates aperiam dolor laborum officiis autem aspernatur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, alias, repudiandae sunt illo consequatur aperiam doloribus nesciunt ut deserunt ipsa est tempora nihil. Totam eveniet aperiam debitis fugit ipsa doloremque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio sequi dolorem suscipit assumenda molestiae voluptatem qui consequuntur magni? Deleniti, corporis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
