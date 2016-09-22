@@ -5,27 +5,27 @@
     <div class=" container well">
     <hr>
     <br>
-    <h1>{{ amp.name }} Details</h1>
+    <h1>{{ peptide.name }} Details</h1>
           <div class=" col-lg-9 col-md-7">
         <div class="media-object-default">
           <div class="media">
             <div class="media-body">
             <div class=" col-md-6">
-              <p>PDB ID : {{ amp.id }}</p>
-              <p>Hidrofobic Area : {{ amp.hfobic_area }}</p>
-              <p>Average Hidrofobicity : {{amp.hfobic_avg}}</p>
-              <p>Charge : {{ amp.charge }}</p>
-              <p>Dipolar Momentum : {{ amp.m_dipol }}</p>
-              <p>Charge / Amount of Atoms : {{ amp.charge_amt_atm }}</p>
-              <p>Dipolar Momentum / amount of Atoms : {{ amp.m_dipol_amt_atm }}</p>
+              <p>PDB ID : {{ peptide.id }}</p>
+              <p>Hidrofobic Area : {{ peptide.hfobic_area }}</p>
+              <p>Average Hidrofobicity : {{peptide.hfobic_avg}}</p>
+              <p>Charge : {{ peptide.charge }}</p>
+              <p>Dipolar Momentum : {{ peptide.m_dipol }}</p>
+              <p>Charge / Amount of Atoms : {{ peptide.charge_amt_atm }}</p>
+              <p>Dipolar Momentum / amount of Atoms : {{ peptide.m_dipol_amt_atm }}</p>
               </div>
               <div class=" col-md-6">
               <h3>Hidrofobic Area Occourcence</h3>
-              <p>"alca" : {{ amp.hd l}}</p>
-              <p>Beta "Alca" : {{ amp.beta_hdl }}</p>
-              <p>Alpha "alca" : {{ amp.alpha_hdl }}</p>
-              <p>Alpha Beta : {{ amp.apha_beta }}</p>
-              <p>Alpha Beta "alca" : {{ amp.alpha_beta_hdl }}</p>
+              <p>"alca" : {{ peptide.hd l}}</p>
+              <p>Beta "Alca" : {{ peptide.beta_hdl }}</p>
+              <p>Alpha "alca" : {{ peptide.alpha_hdl }}</p>
+              <p>Alpha Beta : {{ peptide.apha_beta }}</p>
+              <p>Alpha Beta "alca" : {{ peptide.alpha_beta_hdl }}</p>
               </div>
              </div>
           </div>
