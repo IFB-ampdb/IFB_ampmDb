@@ -40,9 +40,10 @@
           <div class="media">
           
             {% for pep in peptide %}
-            <div class="media-body">
-              <p>Name : {{pep.name}}</p>
+            <div class="media-body well">
               <p>ID : {{pep.pdb_id}}</p>
+              <hr>
+              <p>Sequence : {{pep.sequence}}</p>
              </div>
              {% endfor %}
             
