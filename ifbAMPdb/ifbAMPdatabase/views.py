@@ -3,13 +3,13 @@ from .models import peptide
 # Create your views here.
 
 def home(request):
-    peptide = peptide.objects.all()
-    return render(request, 'home.html', {'peptide': peptide})
+    pep = peptide.objects.all()
+    return render(request, 'home.html', {'peptide': pep})
 
 def search(request):
-    peptide = peptide.objects.all()
-    return render(request, 'search.html', {'peptide': peptide})
+    pep = peptide.objects.all()
+    return render(request, 'search.html', {'peptide': pep})
 
 def ampInfo(request,pk):
-    peptide = get_object_or_404(peptide, pk=pk)
-    return render(request,'ampinfo.html', {'peptide' : peptide})
+    pep = get_object_or_404(peptide, pk=pk)
+    return render(request,'ampinfo.html', {'peptide' : pep})
