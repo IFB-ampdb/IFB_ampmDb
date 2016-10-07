@@ -7,6 +7,7 @@
       <div class="well">
         <h3 class="text-center">Advanced Search</h3>
         <form method="POST" class="form-horizontal">
+	{% csrf_token %}
         <div class=" col-md-3 col-sm-5">
           <div class="form-group">
             <label for="Type" class="control-label">&nbsp;AMP or Non-AMP</label>
@@ -92,23 +93,6 @@
     <div class=" container well">
     <hr>
     <br>
-    <h1>Resoult</h1>
-          <div class=" col-lg-9 col-md-7">
-        <div class="media-object-default">
-          <div class="media">
-         
-            {% for pep in peptide %}
-            <div class="media-body">
-            <a href=""><h3>{{pep.pdb_id}}</h3></a>
-              <p>ID : {{amp.pdb_id}}</p>
-              <p>Sequence : {{pep.sequence}}</p>
-              <p>Hidrofobic Area : {{pep.hfobic_area}}</p>
-              <p>Charge : {{amp.charge}}</p>
-             </div>
-             {% endfor %}
-           
-          </div>
-        </div>
       </div>
       </div>
 </section>
