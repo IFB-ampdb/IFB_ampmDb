@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles %}
+<section>
+  <div class="container">
+    <div class="row">
+      {% for p in posts %}
+      <div class="">
+        <h1>{{p.title}}</h1>
+        <hr>
+        <div class="row">
+          <p>{{p.body}}</p>
+          <p>
+            At: {{p.published_date}}
+          </p>
+        </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
