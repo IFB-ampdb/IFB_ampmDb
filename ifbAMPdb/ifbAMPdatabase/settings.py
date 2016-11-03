@@ -25,7 +25,7 @@ SECRET_KEY = 'ejc(1xv*s^r*3@4r0&l@*!!n0*tx8vxgwf%@ztb+f^3vj9dh)7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['200.130.152.100']
 
 
 # Application definition

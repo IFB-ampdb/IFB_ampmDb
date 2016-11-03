@@ -18,23 +18,26 @@ class Image( models.Model ):
 	name = models.CharField( max_length=100 )
 	image = models.ImageField( upload_to="image" )
 
-	def __unicode__( self ):
+	def __unicode__(self):
 		return self.name
+
+	def __str__(self):
+		return str(self.name)
 
 class Post( models.Model ):
 	title = models.CharField( max_length=100 )
 	body = models.TextField()
 	images = models.ManyToManyField( Image, blank=True )
 	author = models.ForeignKey('auth.User')
-	created_date = models.DateTImeField( default = timexone.now)
+	created_date = models.DateTimeField( default = timezone.now)
 	published_date = models.DateTimeField( blank = True, null= True)
 
 	def body_html( self ):
 		return markdown_to_html( self.body, self.images.all() )
 
 	def publish(self):
-	self.published_date = timezone.now()
-	self.save()
+		self.published_date = timezone.now()
+		self.save()
 
 	def __str__(self):
 		return self.title
