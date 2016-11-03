@@ -7,7 +7,7 @@ from blog.views import homeBlog
 def home(request):
     reqHomeData = homeData()
     reqHomeBlog = homeBlog()
-    return render(request, 'home.html',  reqHomeData, reqHomeBlog)
+    return render(request, 'home.html', reqHomeBlog , reqHomeData )
 
 def homeData():
     pep = peptide.objects.order_by()[:2]
