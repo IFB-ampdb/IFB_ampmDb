@@ -9,8 +9,8 @@
         {% for p in posts %}
         <hr>
         <div class="row">
-          <h3>{{p.title}}</h3>
-          <p>{{p.body[:20]}}</p>
+          <a href="/blog/post/{{p.pk}}/"><h3>{{p.title}}</h3></a>
+          <p>{{p.body}}</p>
           <p>
             At: {{p.published_date}}
           </p>
