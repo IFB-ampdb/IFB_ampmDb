@@ -1,16 +1,17 @@
 from django.shortcuts import render, get_object_or_404
 from .models import peptide
-from blog.models import homeBlog
+from blog.views import homeBlog
 
 # Create your views here.
 
 def home(request):
     reqHomeData = homeData()
-    return homeData() + homeBlog()
+    reqHomeBlog = homeBlog()
+    return render(request, 'home.html',  reqHomeData, reqHomeBlog)
 
-def homeData(request):
+def homeData():
     pep = peptide.objects.order_by()[:2]
-    return render(request, 'home.html', {'peptide': pep})
+    return {'peptide': pep}
 
 def adv_search(request):
     return render(request, 'adv_search.html')
