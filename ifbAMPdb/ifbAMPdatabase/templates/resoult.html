@@ -2,11 +2,14 @@
 {% block content %}
 {% load staticfiles %}
 <section>
+<h1>&nbsp;Search Resoults</h1>
+<h2>Searched for : {% for term in searchTerms %} {{term}}&nbsp;{% endfor%}</h2>
+<h2>&nbsp;Found {{ peptides.__len__() }}</h2>
 {% for peptide in peptides %}
 		<div class=" container well">
 		<hr>
 		<br>
-		<h1>{{ peptide.name }} Details</h1>
+		<h2>{{ peptide.pdb_id }} Details</h2>
 					<div class=" col-lg-9 col-md-7">
 				<div class="media-object-default">
 					<div class="media">
@@ -22,11 +25,11 @@
 							</div>
 							<div class=" col-md-6">
 							<h3>Hidrofobic Area Occourcence</h3>
-							<p>"alca" : {{ peptide.hdl}}</p>
-							<p>Beta "Alca" : {{ peptide.beta_hdl }}</p>
-							<p>Alpha "alca" : {{ peptide.alpha_hdl }}</p>
-							<p>Alpha Beta : {{ peptide.apha_beta }}</p>
-							<p>Alpha Beta "alca" : {{ peptide.alpha_beta_hdl }}</p>
+							<p>Hairpin : {{ peptide.hdl}}</p>
+							<p>Beta Sheet : {{ peptide.beta_hdl }}</p>
+							<p>Alpha Helix : {{ peptide.alpha_hdl }}</p>
+							<p>Alpha Helix Beta Sheet : {{ peptide.apha_beta }}</p>
+							<p>Alpha Helix Beta Sheet Hairpin : {{ peptide.alpha_beta_hdl }}</p>
 							</div>
 						 </div>
 					</div>
