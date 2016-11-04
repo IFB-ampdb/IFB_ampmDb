@@ -6,7 +6,7 @@
 <h1>&nbsp;&nbsp;Search Resoults</h1>
 <br>
 <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Searched for :&nbsp; {% for term in searchTerms %} {{term}}&nbsp;{% endfor%}</h3>
-<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Found {{ peptides }}</h2>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Found {{ peptides|length }}</h2>
 </div>
 <div class=" container well">
 {% for peptide in peptides %}
