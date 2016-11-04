@@ -14,4 +14,4 @@ This project is the creation of a web system that contains multidimensional info
 [1] FERNANDES, F. C.; RIGDEN, D. J.; FRANCO, O. L. Prediction of antimicrobial peptides based on the adaptive neuro-fuzzy inference system application. Biopolymers, v. 98, n. 4, p. 280-7, 2012.
 
 
-#How to Contribute : see [CONTRIBUTING.md][CONTRIBUTING.md]
+#How to Contribute : see [CONTRIBUTING.md](CONTRIBUTING.md)
