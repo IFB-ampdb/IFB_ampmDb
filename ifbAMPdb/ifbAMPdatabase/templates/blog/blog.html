@@ -2,23 +2,23 @@
 {% block content %}
 {% load staticfiles %}
 <section>
-  <div class="container">
-    <div class="row">
-      <div class="">
-        <h3>Blog</h3>
-        {% for p in posts %}
-        <hr>
-        <div class="row">
-          <a href="/blog/post/{{p.pk}}/"><h3>{{p.title}}</h3></a>
-          <p>{{p.body}}</p>
-          <p>
-            At: {{p.published_date}}
-          </p>
-        </div>
-        {% endfor %}
-        </div>
-      </div>
-    </div>
-  </div>
+	<div class="container">
+		<div class="row">
+			<div class="">
+				<h3>Blog</h3>
+				{% for p in posts %}
+				<hr>
+				<div class="row">
+					<a href="/blog/post/{{p.pk}}/"><h3>{{p.title}}</h3></a>
+					<p>{{p.body}}</p>
+					<p>
+						At: {{p.published_date}}
+					</p>
+				</div>
+				{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 {% endblock %}
