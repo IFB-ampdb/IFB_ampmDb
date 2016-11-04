@@ -56,12 +56,13 @@ def ampBasicSearch(request):
 		for qr in pep:
 			pepList.append(qr)
 		return	render(request, 'resoult.html',{'peptides':pepList, 'searchTerms':searchTerms})
-	else not org is '':
+	else:
 		pep = peptide.objects.filter(organism = org)
 		for qr in pep:
 			pepList.append(qr)
 		return	render(request, 'resoult.html',{'peptides':pepList, 'searchTerms':searchTerms})
 		'''
+	not org is '':
 	else:
 		return	render(request, 'notFound.html', {'searchTerms':searchTerms})
 		'''
