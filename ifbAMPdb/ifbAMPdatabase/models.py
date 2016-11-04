@@ -17,6 +17,7 @@ class peptide(models.Model):
 	charge_amt_atm = models.FloatField()
 	m_dipol_amt_atm = models.FloatField()
 	sequence = models.TextField()
+	organizm = models.CharField(max_length=100, blank = True, null= True)
 
 	def __str__(self):
 		return self.pdb_id

@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, render_to_response
 from .models import peptide
 from blog.views import homeBlog
+#from django.db.models import Q
 
 # Create your views here.
 
@@ -28,3 +29,44 @@ def search(request):
 def resoult(request,pk):
 	pep = get_object_or_404(peptide, pk=pk)
 	return render(request,'ampinfo.html', {'peptide' : pep})
+
+
+def ampBasicSearch(request, pdbId, org):
+	pepList = []
+	if not pdbId =	Nil	&&	not	org	=	Nil:
+		pep = peptide.objects.filter(pdb_id = pdbId).filter(org)
+		if type(pep) is not list:
+			pepList.append(pep)
+		return	render(request, 'resoult.html',{'peptides':pepList})
+	elif not pdbId = Nil:
+		pep = peptide.objects.filter(pdb_id = pdbId)
+		if type(pep) is not list:
+			pepList.append(pep)
+		return	render(request, 'resoult.html',{'peptides':pepList})
+	elif not org = Nil:
+				pep = peptide.objects.filter.filter(org)
+				if type(pep) is not list:
+					pepList.append(pep)
+				return	render(request, 'resoult.html',{'peptides':pepList})
+	else:
+		return	render(request, 'notFound.html')
+
+#def ampAdvSearch()
+
+'''
+class ampBasicSearch():
+	def get_queryset(self):
+		result = super(BlogSearchListView, self).get_queryset()
+
+		query = self.request.GET.get('q')
+		if query:
+			query_list = query.split()
+			result = result.filter(
+				reduce(operator.and_,
+					   (Q(title__icontains=q) for q in query_list)) |
+				reduce(operator.and_,
+					   (Q(content__icontains=q) for q in query_list))
+			)
+
+		return result
+'''
