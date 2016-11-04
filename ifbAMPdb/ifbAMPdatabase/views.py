@@ -44,7 +44,7 @@ def ampBasicSearch(request):
 		org = request.GET['org']
 		if not org is '':
 			searchTerms.append(org)
-
+	#search Conditions
 	if not pdbId is	''	and	not	org	is	'':
 		pep = peptide.objects.filter(pdb_id = pdbId).filter(organism = org)
 		for qr in pep:
@@ -61,28 +61,3 @@ def ampBasicSearch(request):
 		for qr in pep:
 			pepList.append(qr)
 		return	render(request, 'resoult.html',{'peptides':pepList, 'searchTerms':searchTerms})
-		'''
-	not org is '':
-	else:
-		return	render(request, 'notFound.html', {'searchTerms':searchTerms})
-		'''
-
-#def ampAdvSearch()
-
-'''
-class ampBasicSearch():
-	def get_queryset(self):
-		result = super(BlogSearchListView, self).get_queryset()
-
-		query = self.request.GET.get('q')
-		if query:
-			query_list = query.split()
-			result = result.filter(
-				reduce(operator.and_,
-					   (Q(title__icontains=q) for q in query_list)) |
-				reduce(operator.and_,
-					   (Q(content__icontains=q) for q in query_list))
-			)
-
-		return result
-'''
