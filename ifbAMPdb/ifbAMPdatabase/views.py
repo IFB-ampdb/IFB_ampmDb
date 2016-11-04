@@ -37,13 +37,15 @@ def ampBasicSearch(request):
 	searchTerms = []
 	if 'pdbId' in request.GET:
 		pdbId = request.GET['pdbId']
-		searchTerms.append(pdbId)
+		if not pdbId is '': 
+			searchTerms.append(pdbId)
 	if 'org' in request.GET:
 		org = request.GET['org']
-		searchTerms.append(org)
+		if not org is '':
+			searchTerms.append(org)
 	pepList = []
 	if not pdbId is	''	and	not	org	is	'':
-		pep = peptide.objects.filter(pdb_id = pdbId).filter(organizm = org)
+		pep = peptide.objects.filter(pdb_id = pdbId).filter(organism = org)
 		for qr in pep:
 			pepList.append(qr)
 		return	render(request, 'resoult.html',{'peptides':pepList, 'searchTerms':searchTerms})
@@ -53,7 +55,7 @@ def ampBasicSearch(request):
 			pepList.append(qr)
 		return	render(request, 'resoult.html',{'peptides':pepList, 'searchTerms':searchTerms})
 	elif not org is '':
-		pep = peptide.objects.filter(organizm = org)
+		pep = peptide.objects.filter(organism = org)
 		for qr in pep:
 			pepList.append(qr)
 		return	render(request, 'resoult.html',{'peptides':pepList, 'searchTerms':searchTerms})
