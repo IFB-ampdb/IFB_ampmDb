@@ -31,7 +31,11 @@ def resoult(request,pk):
 	return render(request,'ampinfo.html', {'peptide' : pep})
 
 
-def ampBasicSearch(request, pdbId, org):
+def ampBasicSearch(request):
+	if 'pdbId' in request.GET:
+		pdbId = request.GET('pdbId')
+	if 'org' in request.GET:
+		org = request.GET('org')
 	pepList = []
 	if not pdbId is	Nil	and	not	org	is	Nil:
 		pep = peptide.objects.filter(pdb_id = pdbId).filter(org)
