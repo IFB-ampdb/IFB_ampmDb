@@ -32,23 +32,32 @@ def resoult(request,pk):
 
 
 def ampBasicSearch(request):
+	print('ampBasicSearch view')
+	pdbId = None
+	org = None
 	if 'pdbId' in request.GET:
-		pdbId = request.GET('pdbId')
+		pdbId = request.GET['pdbId']
+		print('pdbId assigned', pdbId)
 	if 'org' in request.GET:
-		org = request.GET('org')
+		org = request.GET['org']
+		print('org assigned', org)
 	pepList = []
-	if not pdbId is	Nil	and	not	org	is	Nil:
-		pep = peptide.objects.filter(pdb_id = pdbId).filter(org)
-		if type(pep) is not list:
-			pepList.append(pep)
+	if not pdbId is	''	and	not	org	is	'':
+		print('in big if')
+		pep = peptide.objects.filter(pdb_id = pdbId).filter(organizm = org)
+		for qr in pep:
+			pepList.append(qr)
+	
+		for i in pepList:
+			print(i, type(i))
 		return	render(request, 'resoult.html',{'peptides':pepList})
-	elif not pdbId is Nil:
+	elif not pdbId is '':
 		pep = peptide.objects.filter(pdb_id = pdbId)
 		if type(pep) is not list:
 			pepList.append(pep)
 		return	render(request, 'resoult.html',{'peptides':pepList})
-	elif not org is Nil:
-				pep = peptide.objects.filter.filter(org)
+	elif not org is '':
+				pep = peptide.objects.filter(organizm = org)
 				if type(pep) is not list:
 					pepList.append(pep)
 				return	render(request, 'resoult.html',{'peptides':pepList})
