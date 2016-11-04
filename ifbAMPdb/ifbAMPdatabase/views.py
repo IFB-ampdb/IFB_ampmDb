@@ -33,17 +33,17 @@ def resoult(request,pk):
 
 def ampBasicSearch(request, pdbId, org):
 	pepList = []
-	if not pdbId =	Nil	&&	not	org	=	Nil:
+	if not pdbId is	Nil	and	not	org	is	Nil:
 		pep = peptide.objects.filter(pdb_id = pdbId).filter(org)
 		if type(pep) is not list:
 			pepList.append(pep)
 		return	render(request, 'resoult.html',{'peptides':pepList})
-	elif not pdbId = Nil:
+	elif not pdbId is Nil:
 		pep = peptide.objects.filter(pdb_id = pdbId)
 		if type(pep) is not list:
 			pepList.append(pep)
 		return	render(request, 'resoult.html',{'peptides':pepList})
-	elif not org = Nil:
+	elif not org is Nil:
 				pep = peptide.objects.filter.filter(org)
 				if type(pep) is not list:
 					pepList.append(pep)
