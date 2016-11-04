@@ -1,4 +1,4 @@
-# AMPDB django
+# IFB's Antimicrobial Peptide Multidimensional Database
 
 ###Objective:
 #### This project aims to decrease the costs of *in-silico* antibiotic research. How ? Read the scientific text below.
