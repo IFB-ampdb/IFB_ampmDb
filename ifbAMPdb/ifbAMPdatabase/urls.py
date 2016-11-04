@@ -9,4 +9,5 @@ urlpatterns = [
 	url(r'^search/$', views.search, name='Search'),
 	url(r'^adv_search/$', views.adv_search, name='Advanced Search'),
 	url(r'^amp/(?P<pk>)/$', views.resoult, name='AMP Info'),
+	url(r'^ampBasicSeach/$', views.ampBasicSearch, name='ampBasicSeach'),
 ]
