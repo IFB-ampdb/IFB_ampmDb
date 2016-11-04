@@ -32,37 +32,33 @@ def resoult(request,pk):
 
 
 def ampBasicSearch(request):
-	print('ampBasicSearch view')
 	pdbId = None
 	org = None
+	searchTerms = []
 	if 'pdbId' in request.GET:
 		pdbId = request.GET['pdbId']
-		print('pdbId assigned', pdbId)
+		searchTerms.append(pdbId)
 	if 'org' in request.GET:
 		org = request.GET['org']
-		print('org assigned', org)
+		searchTerms.append(org)
 	pepList = []
 	if not pdbId is	''	and	not	org	is	'':
-		print('in big if')
 		pep = peptide.objects.filter(pdb_id = pdbId).filter(organizm = org)
 		for qr in pep:
 			pepList.append(qr)
-
-		for i in pepList:
-			print(i, type(i))
-		return	render(request, 'resoult.html',{'peptides':pepList})
+		return	render(request, 'resoult.html',{'peptides':pepList, 'searchTerms':searchTerms})
 	elif not pdbId is '':
 		pep = peptide.objects.filter(pdb_id = pdbId)
 		for qr in pep:
 			pepList.append(qr)
-		return	render(request, 'resoult.html',{'peptides':pepList})
+		return	render(request, 'resoult.html',{'peptides':pepList, 'searchTerms':searchTerms})
 	elif not org is '':
 		pep = peptide.objects.filter(organizm = org)
 		for qr in pep:
 			pepList.append(qr)
-		return	render(request, 'resoult.html',{'peptides':pepList})
+		return	render(request, 'resoult.html',{'peptides':pepList, 'searchTerms':searchTerms})
 	else:
-		return	render(request, 'notFound.html')
+		return	render(request, 'notFound.html', {'searchTerms':searchTerms})
 
 #def ampAdvSearch()
 
