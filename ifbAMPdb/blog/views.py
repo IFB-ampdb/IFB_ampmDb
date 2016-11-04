@@ -4,7 +4,9 @@ from .models import Post
 # Create your views here.
 
 def homeBlog():
-	pst = Post.objects.order_by('-published_date')[:3]
+	pst = Post.objects.order_by('-published_date')[:2]
+	for p in pst:
+		p.body = p.body[:100]+' . . . '
 	return ('posts', pst)
 
 def blog(request):
