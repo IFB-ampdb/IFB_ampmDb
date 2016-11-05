@@ -15,3 +15,8 @@ This project is the creation of a web system that contains multidimensional info
 
 
 #How to Contribute : see [CONTRIBUTING.md](CONTRIBUTING.md)
+
+#About the Authors
+
+#### This project was conceived by Fabiano Cavalcanti Fernandes, Doctor in Genomic Sciences and Biotechnology and Professor of the Federal Institute of Brasilia (IFB). It was first proposed as a Scientific initiation project. 
+####Rafael de Campos Passos was the Scientific initiation student and the main contributor behind all the project.
