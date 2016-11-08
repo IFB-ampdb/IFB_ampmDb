@@ -4,15 +4,17 @@
 <section>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
-				<h3>Blog</h3>
+			<div class="jumbotron col-md-offset-2 col-md-8">
+				<h1>Blog</h1>
 				{% for p in posts %}
 				<hr>
-				<div class="row">
+				<div class="well row">
 					<a href="/blog/post/{{p.pk}}/"><h3>{{p.title}}</h3></a>
+					<br>
 					<p>{{p.body}}</p>
+					<br>
 					<p>
-						At: {{p.published_date}}
+						Posted: {{p.published_date}}
 					</p>
 				</div>
 				{% endfor %}
