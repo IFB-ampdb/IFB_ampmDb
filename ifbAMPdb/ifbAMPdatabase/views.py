@@ -26,9 +26,9 @@ def search(request):
 	pep = peptide.objects.all()
 	return render(request, 'search.html', {'peptide': pep})
 
-def resoult(request,pk):
-	pep = get_object_or_404(peptide, pk=pk)
-	return render(request,'ampinfo.html', {'peptide' : pep})
+def detail(request,pk):
+	pep = get_object_or_404(peptide, pdb_id = pk)
+	return render(request,'detail.html', {'peptide' : pep})
 
 
 def ampBasicSearch(request):
