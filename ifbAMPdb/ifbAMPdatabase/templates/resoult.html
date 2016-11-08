@@ -11,7 +11,7 @@
 		</div>
 		<div class=" container well">
 			{% for peptide in peptides %}
-			<h2>{{ peptide.pdb_id }} Details</h2>
+			<h2><a href="peptide/{{ peptide.pdb_id }}">{{ peptide.pdb_id }}</a> Details</h2>
 			<div class=" row">
 				<div class="media-object-default">
 					<div class="media">
