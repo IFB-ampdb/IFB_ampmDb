@@ -3,113 +3,91 @@
 {% load staticfiles %}
 <section>
 	<div class="container">
-	<div class="col-lg-8 col-md-12 col-md-offset-0 col-lg-offset-2">
+		<div class="col-lg-8 col-md-12 col-md-offset-0 col-lg-offset-2">
 			<div class="well">
 				<h3 class="text-center">Advanced Search</h3>
 				<form method="POST" class="form-horizontal">
-				<div class=" col-md-3 col-sm-5">
-					<div class="form-group">
-						<label for="Type" class="control-label">&nbsp;AMP or Non-AMP</label>
-						<select class=" form-control" name="type" id="Type">
-							<option value="">Any</option>
-							<option value="">AMP</option>
-							<option value="">Non-AMP</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label for="id" class="control-label"> PDB ID</label>
-						<div class="input-group">
-							<input type="text" class="form-control" id="id" aria-describedby="basic-addon1">
+					<div class=" col-md-3 col-sm-5">
+						<div class="form-group">
+							<label for="Type" class="control-label">&nbsp;AMP or Non-AMP</label>
+							<select class=" form-control" name="type" id="Type">
+								<option value="">Any</option>
+								<option value="">AMP</option>
+								<option value="">Non-AMP</option>
+							</select>
 						</div>
-					</div>
-					<div class="form-group">
-						<label for="Organizm" class="control-label">&nbsp;Organizm</label>
-						<div class="input-group">
-							<input type="text" class="form-control" id="name" aria-describedby="basic-addon1">
+						<div class="form-group">
+							<label for="id" class="control-label"> PDB ID</label>
+							<div class="input-group">
+								<input type="text" class="form-control" id="id" aria-describedby="basic-addon1">
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label for="name" class="control-label">&nbsp;Hidrofobic Area</label>
-						<div class="input-group">
-							<input type="text" class="form-control" id="hfobic_area" aria-describedby="basic-addon1">
+						<div class="form-group">
+							<label for="Organizm" class="control-label">&nbsp;Organizm</label>
+							<div class="input-group">
+								<input type="text" class="form-control" id="name" aria-describedby="basic-addon1">
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label for="name" class="control-label">&nbsp;Average Hidrofobicity</label>
-						<div class="input-group">
-							<input type="number" class="form-control" id="hfobic_avg" aria-describedby="basic-addon1">
+						<div class="form-group">
+							<label for="name" class="control-label">&nbsp;Hidrofobic Area</label>
+							<div class="input-group">
+								<input type="text" class="form-control" id="hfobic_area" aria-describedby="basic-addon1">
+							</div>
 						</div>
-					</div>
-					<hr>
-					</div>
-					<div class=" col-md-4 col-md-offset-1 col-sm-5 col-sm-offset-1">
-					<div class="form-group">
-						<label for="name" class="control-label">&nbsp;Charge</label>
-						<div class="input-group">
-							<input type="number" class="form-control" id="Charge" aria-describedby="basic-addon1">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="name" class="control-label">&nbsp;Diplolar Momentum Modulus</label>
-						<div class="input-group">
-							<input type="number" class="form-control" id="m_dipol" aria-describedby="basic-addon1">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="name" class="control-label">&nbsp;Charge / Amount of Atoms</label>
-						<div class="input-group">
-							<input type="number" class="form-control" id="charge_amt_atm" aria-describedby="basic-addon1">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="name" class=" text-left control-label">Dipolar Momentum /<br>Amount of Atoms</label>
-						<div class="input-group">
-							<input type="number" class="form-control" id="m_dipol_amt_atm" aria-describedby="basic-addon1">
-						</div>
-					</div>
-					<hr>
-					</div>
-					<div class=" col-md-3 col-md-offset-1 col-sm-6 col-sm-offset-1">
-					<div class="form-group">
-					<label for="name" class=" text-center control-label"><h3>Hidrofobic Area Occourence</h3></label>
-					<div class="input-group">
-									<br>
-									<input type="checkbox" class="form-inline" id="hdl" aria-describedby="basic-addon1"><label for="hdl">&nbsp;Alça </label><br><br>
-									<input type="checkbox" class="form-inline" id="beta_hdl" aria-describedby="basic-addon1"><label for="beta_hdl">&nbsp;Beta "Alça" </label><br><br>
-									<input type="checkbox" class="form-inline" id="alpha_hdl" aria-describedby="basic-addon1"><label for="alpha_hdl">&nbsp;Alpha "Alça" </label><br><br>
-									<input type="checkbox" class="form-inline" id="alpha_beta" aria-describedby="basic-addon1"><label for="alpha_beta">&nbsp;Alpha + Beta </label><br><br>
-									<input type="checkbox" class="form-inline" id="alpha_beta_hdl" aria-describedby="basic-addon1"><label for="alpha_beta_hdl">&nbsp;Alpha Beta "Alça" </label><br><br>
+						<div class="form-group">
+							<label for="name" class="control-label">&nbsp;Average Hidrofobicity</label>
+							<div class="input-group">
+								<input type="number" class="form-control" id="hfobic_avg" aria-describedby="basic-addon1">
+							</div>
 						</div>
 						<hr>
 					</div>
+					<div class=" col-md-4 col-md-offset-1 col-sm-5 col-sm-offset-1">
+						<div class="form-group">
+							<label for="name" class="control-label">&nbsp;Charge</label>
+							<div class="input-group">
+								<input type="number" class="form-control" id="Charge" aria-describedby="basic-addon1">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="name" class="control-label">&nbsp;Diplolar Momentum Modulus</label>
+							<div class="input-group">
+								<input type="number" class="form-control" id="m_dipol" aria-describedby="basic-addon1">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="name" class="control-label">&nbsp;Charge / Amount of Atoms</label>
+							<div class="input-group">
+								<input type="number" class="form-control" id="charge_amt_atm" aria-describedby="basic-addon1">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="name" class=" text-left control-label">Dipolar Momentum /<br>Amount of Atoms</label>
+							<div class="input-group">
+								<input type="number" class="form-control" id="m_dipol_amt_atm" aria-describedby="basic-addon1">
+							</div>
+						</div>
+						<hr>
+					</div>
+					<div class=" col-md-3 col-md-offset-1 col-sm-6 col-sm-offset-1">
+						<div class="form-group">
+							<label for="name" class=" text-center control-label"><h3>Hidrofobic Area Occourence</h3></label>
+							<div class="input-group">
+								<br>
+								<input type="checkbox" class="form-inline" id="hdl" aria-describedby="basic-addon1"><label for="hdl">&nbsp;Alça </label><br><br>
+								<input type="checkbox" class="form-inline" id="beta_hdl" aria-describedby="basic-addon1"><label for="beta_hdl">&nbsp;Beta "Alça" </label><br><br>
+								<input type="checkbox" class="form-inline" id="alpha_hdl" aria-describedby="basic-addon1"><label for="alpha_hdl">&nbsp;Alpha "Alça" </label><br><br>
+								<input type="checkbox" class="form-inline" id="alpha_beta" aria-describedby="basic-addon1"><label for="alpha_beta">&nbsp;Alpha + Beta </label><br><br>
+								<input type="checkbox" class="form-inline" id="alpha_beta_hdl" aria-describedby="basic-addon1"><label for="alpha_beta_hdl">&nbsp;Alpha Beta "Alça" </label><br><br>
+							</div>
+							<hr>
+						</div>
 					</div>
 					<div class="row"><div class="col-sm-12"><p class="text-center"><button type="submit"><a href="#" class="btn btn-danger" role="button">Search </a></button></p></div></div>
 				</form>
 			</div>
 			<hr>
-			</div>
 		</div>
-		<div class=" container well">
-		<hr>
-		<br>
-		<h1>Resoult</h1>
-					<div class=" col-lg-9 col-md-7">
-				<div class="media-object-default">
-					<div class="media">
-
-						{% for pep in peptide %}
-						<div class="media-body">
-						<a href=""><h3>{{pep.pdb_id}}</h3></a>
-							<p>ID : {{amp.pdb_id}}</p>
-							<p>Sequence : {{pep.sequence}}</p>
-							<p>Hidrofobic Area : {{pep.hfobic_area}}</p>
-							<p>Charge : {{amp.charge}}</p>
-						 </div>
-						 {% endfor %}
-
-					</div>
-				</div>
-			</div>
-			</div>
+	</div>
 </section>
 {% endblock %}
