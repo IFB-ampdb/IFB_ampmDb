@@ -1,6 +1,30 @@
 # IFB's Antimicrobial Peptide Multidimensional Database
 
-###Objective:
+![logo](docs/logo_IFB.svg)
+
+# Contents 
+
+This project was built using the Django Framework. And it it separated in two 'web apps': 
+- ampdb (main django application): Where all the logic behind main service is added.
+- Blog app. : A simple blog for posting news about the service.
+
+
+
+# How it works
+
+#### Researchers will be able to search the database using:
+- Basic search: using the globaly used PDB id and/or the organizm, 
+- Advance search: searching for all the multidimensional data in our database
+ 
+![image](ifbAMPdb/image/demonstration.gif)
+
+In the future, we plan to add:
+- Custom search with a shell script,
+- Custom SQL search in a web page
+
+
+
+# Objective:
 #### This project aims to decrease the costs of *in-silico* antibiotic research. How ? Read the scientific text below.
 
 
@@ -19,4 +43,4 @@ This project is the creation of a web system that contains multidimensional info
 #About the Authors
 
 #### This project was conceived by Fabiano Cavalcanti Fernandes, Doctor in Genomic Sciences and Biotechnology and Professor of the Federal Institute of Brasilia (IFB). It was first proposed as a Scientific initiation project. 
-####Rafael de Campos Passos was the Scientific initiation student and the main contributor behind all the project.
+#### Rafael de Campos Passos was the Scientific initiation student and the main contributor behind all the project.
