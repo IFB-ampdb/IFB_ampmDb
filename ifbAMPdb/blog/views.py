@@ -5,8 +5,6 @@ from .models import Post
 
 def homeBlog():
 	pst = Post.objects.order_by('-published_date')[:2]
-	for p in pst:
-		p.description = p.description+' Open to Read More ! '
 	return ('posts', pst)
 
 def blog(request):
