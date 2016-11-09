@@ -20,9 +20,6 @@ def homeData():
 	pep = peptide.objects.order_by()[:2]
 	return {'peptide': pep}
 
-def adv_search(request):
-	return render(request, 'adv_search.html')
-
 def search(request):
 	pep = peptide.objects.all()
 	return render(request, 'search.html', {'peptide': pep})
@@ -62,3 +59,6 @@ def ampBasicSearch(request):
 		for qr in pep:
 			pepList.append(qr)
 		return	render(request, 'resoult.html',{'peptides':pepList, 'searchTerms':searchTerms})
+
+def advSearch(request):
+	return render(request, 'adv_search.html')
