@@ -4,7 +4,7 @@
 <section>
 	<div class="navbar" style="margin-left:5px; margin-top: -35px"><nav class="navbar-header"><h3>&nbsp;The Multidimensional Antimicrobial Peptide Database</h3></nav></div>
 	<div class="container">
-		<div class="col-lg-3 col-md-5 col-md-offset-0 col-lg-offset-0">
+		<div class="col-lg-3 col-md-5 col-md-offset-0 col-lg-offset-0">av
 			<div class="well">
 			{% csrf_token %}
 				<h3 class="text-center">Quick Search</h3>
@@ -29,7 +29,7 @@
 				</form>
 			</div>
 			<hr>
-			<a href="adv_search/"><div class=" text-center well"><h3>ADVANCED SEARCH</h3></div></a>
+			<a href="/search/advanced/"><div class=" text-center well"><h3>ADVANCED SEARCH</h3></div></a>
 		</div>
 		<div class=" col-lg-9 col-md-7">
 			{% for pep in peptide %}
