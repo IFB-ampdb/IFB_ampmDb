@@ -3,15 +3,19 @@
 {% load staticfiles %}
 <section>
 	<div class="container">
+		<h1 style=" font-size: 400%">Blog Post Details</h1>
+		<br>
 		<div class="row">
-			<div class="">
-				<h1>{{post.title}}</h1>
+			<div class="jumbotron">
+				<h1 style=" font-size: 300%">{{post.title}}</h1>
 				<hr>
 				<div class="row">
-					<p>{{post.body}}</p>
+					<ul>
+					<p>{{post.body|safe}}</p>
 					<p>
 						At: {{post.published_date}}
 					</p>
+					</ul>
 				</div>
 				</div>
 			</div>
