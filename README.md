@@ -1,6 +1,6 @@
 # IFB's Antimicrobial Peptide Multidimensional Database
 
-![logo](docs/logo/logo_IFB.png)
+![logo](docs/Logo/logo_IFB.png)
 
 # Contents 
 
