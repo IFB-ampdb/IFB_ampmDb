@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, render_to_response
 from .models import peptide
 from blog.views import homeBlog
-from random import randrange
+
 #from django.db.models import Q
 
 # Create your views here.
@@ -9,11 +9,7 @@ from random import randrange
 def home(request):
 	#reqHomeData = homeData()
 	reqHomeBlog = homeBlog()
-	pep=[]
-	index= randrange(0,50)
-	pep.append(peptide.objects.filter(pk=index)
-	index= randrange(0,50)
-	pep.append(peptide.objects.filter(pk=index)
+	pep = peptide.objects.order_by()[:2]
 	data = {
 	'peptide':pep,
 	reqHomeBlog[0]:reqHomeBlog[1]
