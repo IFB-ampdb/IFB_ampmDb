@@ -6,7 +6,16 @@
 	<div class='jumbotron'>
 		<h1>&nbsp;&nbsp;Search Resoults</h1>
 		<br>
-		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Searched for :&nbsp; {% for term in searchTerms %} {{term}}&nbsp;{% endfor%}</h3>
+		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search terms :&nbsp; </h3>
+		<ul>
+		{% for term in searchTerms %} 
+			{% if |length > 0 %%}
+			<li>
+				{% term %}: {% searchTerms.get(term) %}
+			</li>
+			{% endif %}
+		{% endfor%}
+		</ul>
 		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Found {{ peptides|length }}</h2>
 		</div>
 		<div class=" container well">
