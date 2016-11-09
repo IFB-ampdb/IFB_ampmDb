@@ -6,13 +6,13 @@
 	<div class="col-lg-8 col-md-12 col-md-offset-0 col-lg-offset-2">
 			<div class="well">
 				<h3 class="text-center">Advanced Search</h3>
-				<form method="GET" action="{% url 'advSearch' %}" class="form-horizontal">
+				<form method="GET" action="{% url 'Advanced Resoults'  %}" class="form-horizontal">
 	{% csrf_token %}
 				<div class=" col-md-3 col-sm-5">
 					<div class="form-group">
 						<label for="pdb_id" class="control-label"> PDB ID</label>
 						<div class="input-group">
-							<input type="text" class="form-control" id="pdb_id" aria-describedby="basic-addon1">
+							<input type="text" class="form-control" name="pdb_id" aria-describedby="basic-addon1">
 						</div>
 					</div>
 					<div class="form-group">
