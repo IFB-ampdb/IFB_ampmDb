@@ -11,7 +11,7 @@
 				<div class="well row">
 					<a href="/blog/post/{{p.pk}}/"><h3>{{p.title}}</h3></a>
 					<br>
-					<p>{{p.body}}</p>
+					<p>{{p.body|safe}}</p>
 					<br>
 					<p>
 						Posted: {{p.published_date}}
