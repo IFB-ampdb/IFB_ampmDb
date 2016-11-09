@@ -27,7 +27,7 @@ class Image( models.Model ):
 class Post( models.Model ):
 	title = models.CharField( max_length=100 )
 	body = models.TextField()
-	description = models.CharField(max_length=200, blank=True)
+	description = models.CharField(max_length=150)
 	images = models.ManyToManyField( Image, blank=True )
 	author = models.ForeignKey('auth.User')
 	created_date = models.DateTimeField( default = timezone.now)
