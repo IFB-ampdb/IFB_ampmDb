@@ -6,10 +6,10 @@
 	<div class="container">
 		<div class="col-lg-3 col-md-5 col-md-offset-0 col-lg-offset-0">
 			<div class="well">
-			{% csrf_token %}
 				<h3 class="text-center">Quick Search</h3>
 				<form	id="ampBasicSearch" action="{% url 'ampBasicSeach' %}" method="POST" accept-charset="utf-8" class="form-horizontal">
-					<div class="form-group">
+				{% csrf_token %}
+						<div class="form-group">
 						<label for="id" class="control-label">&nbsp;PDB ID</label>
 						<div class="input-group">
 							<input type="text" class="form-control" name="pdbId" aria-describedby="basic-addon1">
