@@ -8,7 +8,7 @@
 			<div class="well">
 			{% csrf_token %}
 				<h3 class="text-center">Quick Search</h3>
-				<form	id="ampBasicSearch" action="{% url 'ampBasicSeach' %}" method="GET" accept-charset="utf-8" class="form-horizontal">
+				<form	id="ampBasicSearch" action="{% url 'ampBasicSeach' %}" method="POST" accept-charset="utf-8" class="form-horizontal">
 					<div class="form-group">
 						<label for="id" class="control-label">&nbsp;PDB ID</label>
 						<div class="input-group">
