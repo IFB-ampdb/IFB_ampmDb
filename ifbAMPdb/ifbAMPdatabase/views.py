@@ -36,12 +36,12 @@ def ampBasicSearch(request):
 	pepList = []
 	#Search items
 	try:
-		if 'pdbId' in request.GET:
-			pdbId = request.GET['pdbId']
+		if 'pdbId' in request.POST:
+			pdbId = request.POST['pdbId']
 			if not pdbId is '':
 				searchTerms.append(pdbId)
-		if 'org' in request.GET:
-			org = request.GET['org']
+		if 'org' in request.POST:
+			org = request.POST['org']
 			if not org is '':
 				searchTerms.append(org)
 	except Exception as e:
