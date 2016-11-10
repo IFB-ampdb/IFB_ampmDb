@@ -75,7 +75,7 @@ def ampBasicSearch(request):
 
 		for qr in pep:
 			pepList.append(qr)
-		return	render(request, 'advResoults.html',{'peptides':pepList, 'searchTerms':searchTerms})
+		return	render(request, 'resoult.html',{'peptides':pepList, 'searchTerms':searchTerms})
 
 
 # Loads the Advanced Search page
