@@ -8,9 +8,9 @@
 		<br>
 		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search terms :&nbsp; </h3>
 		<ul>
-		{% for term in searchTerms %} 
+		{% for term in searchTerms %}
 			<li>
-				<p>{{ term.key }}: {{term}}</p>
+				<p>{{ term.key }}: {{term[term.key]}}</p>
 			</li>
 		{% endfor%}
 			<li>test</li>
