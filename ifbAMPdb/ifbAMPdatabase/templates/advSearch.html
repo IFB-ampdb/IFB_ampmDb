@@ -3,12 +3,13 @@
 {% load staticfiles %}
 <section>
 	<div class="container">
-	<div class="col-lg-8 col-md-12 col-md-offset-0 col-lg-offset-2">
-			<div class="well">
-				<h3 class="text-center">Advanced Search</h3>
+	<div class="col-md-12">
+			<div class="well row">
+				<h2 class="text-center">Advanced Search</h2>
+				<hr>
 				<form method="GET" action="{% url 'Advanced Resoults'  %}" class="form-horizontal">
 	{% csrf_token %}
-				<div class=" col-md-3 col-sm-5">
+				<div class=" col-md-4 col-sm-5">
 					<div class="form-group">
 						<label for="pdb_id" class="control-label"> PDB ID</label>
 						<div class="input-group">
@@ -41,7 +42,7 @@
 					</div>
 					<hr>
 					</div>
-					<div class=" col-md-4 col-md-offset-1 col-sm-5 col-sm-offset-1">
+					<div class=" col-md-4 col-sm-5 ">
 					<div class="form-group">
 						<label for="name" class="control-label">&nbsp;Charge</label>
 						<div class="input-group">
@@ -68,16 +69,17 @@
 					</div>
 					<hr>
 					</div>
-					<div class=" col-md-3 col-md-offset-1 col-sm-6 col-sm-offset-1">
-					<div class="form-group">
-					<label for="name" class=" text-center control-label"><h3>Hidrofobic Area Occourence</h3></label>
+					<div class=" col-md-4  col-sm-6 ">
+					<input type="checkbox" class="form-inline" name="useCheckbox" aria-describedby="basic-addon1"><label for="useCheckbox"><h4>&nbsp;Mark this to use this section</h4></label>
+					<div class="well form-group">
+					<label for="name" class=" control-label"><h3 class="text-center">Hidrofobic Area Occourence</h3></label>
 					<div class="input-group">
 									<br>
 									<input type="checkbox" class="form-inline" name="hairpin" aria-describedby="basic-addon1"><label for="hdl">&nbsp;Hairpin </label><br><br>
 									<input type="checkbox" class="form-inline" name="beta_sheet" aria-describedby="basic-addon1"><label for="beta_hdl">&nbsp;Beta Sheet </label><br><br>
 									<input type="checkbox" class="form-inline" name="alpha_helix" aria-describedby="basic-addon1"><label for="alpha_hdl">&nbsp;Alpha Helix </label><br><br>
-									<input type="checkbox" class="form-inline" name="alpha_helix_beta_sheet" aria-describedby="basic-addon1"><label for="alpha_beta">&nbsp;Alpha Helix Beta Sheet </label><br><br>
-									<input type="checkbox" class="form-inline" name="alpha_helix_beta_sheet_hairpin" aria-describedby="basic-addon1"><label for="alpha_beta_hdl">&nbsp;Alpha Helix Beta Sheet Hairpin</label><br><br>
+									<input type="checkbox" class="form-inline" name="alpha_helix_beta_sheet" aria-describedby="basic-addon1"><label for="alpha_beta">&nbsp;Alpha Helix + Beta Sheet </label><br><br>
+									<input type="checkbox" class="form-inline" name="alpha_helix_beta_sheet_hairpin" aria-describedby="basic-addon1"><label for="alpha_beta_hdl">&nbsp;Alpha Helix + Beta Sheet + Hairpin</label><br><br>
 						</div>
 						<hr>
 					</div>
