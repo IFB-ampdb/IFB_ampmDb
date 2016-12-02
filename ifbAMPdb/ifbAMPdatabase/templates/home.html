@@ -7,7 +7,7 @@
 		<div class="col-lg-3 col-md-5 col-md-offset-0 col-lg-offset-0">
 			<div class="well">
 				<h3 class="text-center">Quick Search</h3>
-				<form	id="ampBasicSearch" action="{% url 'ampBasicSeach' %}" method="POST" accept-charset="utf-8" class="form-horizontal">
+				<form	id="ampBasicSearch" action="{% url 'SearchResoults' %}" method="POST" accept-charset="utf-8" class="form-horizontal">
 				{% csrf_token %}
 						<div class="form-group">
 						<label for="id" class="control-label">&nbsp;PDB ID</label>
@@ -28,16 +28,16 @@
 				</form>
 			</div>
 			<hr>
-			<a href="/search/advanced/"><div class=" text-center well"><h3>ADVANCED SEARCH</h3></div></a>
+			<a href="{% url 'AdvancedSearch' %}"><div class=" text-center well"><h3>ADVANCED SEARCH</h3></div></a>
 		</div>
 		<div class=" col-lg-9 col-md-7">
-			{% for pep in peptide %}
+			{% for peptide in peptides %}
 			<div class="media-object-default">
 				<div class="media">
-					<div class="thumbnail"> <img src="{% static 'images/400X200.gif' %}" alt="Thumbnail {{pep.pdb_id}}" class="img-responsive">
+					<div class="thumbnail"> <img src="{% static 'images/400X200.gif' %}" alt="Thumbnail {{peptide.pdb_id}}" class="img-responsive">
 						<div class="caption">
-							<h3>ID: <a href="/peptide/{{ pep.pdb_id }}">{{pep.pdb_id}}</a></h3>
-							<p>Sequence: {{pep.sequence}}</p>
+							<h3>ID: <a href="{% url 'PeptideDetails' {{ peptide.pdb_id }} %}">{{peptide.pdb_id}}</a></h3>
+							<p>Sequence: {{peptide.sequence}}</p>
 						</div>
 					</div>
 				</div>
@@ -57,15 +57,15 @@
 				<p>Check the guide on how to contribute in our repository page.</p>
 				</div>
 				<div class="col-xs-12 col-md-offset-1 col-md-8">
-					<h2>Latest Posts in our <a href="/blog/">Blog</a></h3>
+					<h2>Latest Posts in our <a href="{% url 'blog'%}">Blog</a></h3>
 					<ul>
-					{% for p in posts %}
+					{% for post in posts %}
 					<hr>
 					<div class="row">
-						<h3><a href="/blog/post/{{p.pk}}">{{p.title}}</a></h3>
-						<p>{{p.description}}</p>
+						<h3><a href="{% url 'blog_post' {{post.pk}} %}">{{post.title}}</a></h3>
+						<p>{{post.description}}</p>
 						<p>Open to Read More !</p>
-						<p>{{p.published_date}}</p>
+						<p>{{post.published_date}}</p>
 					</div>
 					{% endfor %}
 					</ul>

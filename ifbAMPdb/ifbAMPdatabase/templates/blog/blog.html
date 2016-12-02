@@ -6,15 +6,15 @@
 		<div class="row">
 			<div class="jumbotron col-md-offset-2 col-md-8">
 				<h1>Blog</h1>
-				{% for p in posts %}
+				{% for post in posts %}
 				<hr>
 				<div class="well row">
-					<a href="/blog/post/{{p.pk}}/"><h3>{{p.title}}</h3></a>
+					<a href="{% url 'blog_post' {{post.pk}} %}"><h3>{{post.title}}</h3></a>
 					<br>
-					<p>{{p.body|safe}}</p>
+					<p>{{post.body|safe}}</p>
 					<br>
 					<p>
-						Posted: {{p.published_date}}
+						Posted: {{post.published_date}}
 					</p>
 				</div>
 				{% endfor %}

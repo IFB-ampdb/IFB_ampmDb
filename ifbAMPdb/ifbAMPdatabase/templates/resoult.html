@@ -9,45 +9,8 @@
 		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Searched for :&nbsp; {% for term in searchTerms %} {{term}}&nbsp;{% endfor%}</h3>
 		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Found {{ peptides|length }}</h3>
 		</div>
-		<div class=" container well">
-			{% for peptide in peptides %}
-			<h2><a href="/peptide/{{ peptide.pdb_id }}">{{ peptide.pdb_id }}</a> Details</h2>
-			<div class=" row">
-				<div class="media-object-default">
-					<div class="media">
-						<div class="media-body">
-							<div class="col-xs-12 col-md-6 ">
-								<div class="container">
-								<p>PDB ID : {{ peptide.pdb_id|safe }}</p>
-								<p>Organism : {{peptide.organism|safe}}</p>
-								<p>Sequence : {{peptide.sequence|safe}}</p>
-								<p>Hidrofobic Area : {{ peptide.hfobic_area|safe }}</p>
-								<p>Average Hidrofobicity : {{peptide.hfobic_avg|safe}}</p>
-								<p>Charge : {{ peptide.charge|safe }}</p>
-								<p>Dipolar Momentum : {{ peptide.m_dipol|safe }}</p>
-								<p>Charge / Amount of Atoms : {{ peptide.charge_amt_atm|safe }}</p>
-								<p>Dipolar Momentum / amount of Atoms : {{ peptide.m_dipol_amt_atm|safe }}</p>
-								</div>
-							</div>
-							<div class="col-xs-12 col-md-offset-1 col-md-5">
-								<div class="container">
-								<h3>Hidrofobic Area Occourcence</h3>
-								<p>Hairpin : {{ peptide.hairpin|safe}}</p>
-								<p>Beta Sheet : {{ peptide.beta_sheet|safe}}</p>
-								<p>Alpha Helix : {{ peptide.alpha_helix|safe }}</p>
-								<p>Alpha Helix Beta Sheet : {{ peptide.alpha_helix_beta_sheet|safe }}</p>
-								<p>Alpha Helix Beta Sheet Hairpin : {{ peptide.alpha_helix_beta_sheet_hairpin|safe }}</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<br>
-			<hr>
-			<br>
-			{% endfor %}
-		</div>
+		{% block content %}
+		{% endblock %}
 	</section>
 	{% endif %}
 	{% if not peptides%}
@@ -58,7 +21,7 @@
 			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Searched for :&nbsp; {% for term in searchTerms %} {{term}}&nbsp;{% endfor%}</h3>
 			<br>
 			<h2>&nbsp;&nbsp;&nbsp; Sorry, but no peptide was found with the search terms above.</h2>
-			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Try correcting Typos or refine your search in the <a href="/search/advanced/" class="btn btn-success">Advanced Search</a></h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Try correcting Typos or refine your search in the <a href="{% url'AdvancedSearch'%}" class="btn btn-success">Advanced Search</a></h3>
 		</div>
 	</section>
 	{% endif%}
