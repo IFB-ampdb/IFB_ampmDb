@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load staticfiles %}
-{% if peptides %}
+
+{% if searchTerms %}
 <section>
 	<div class='jumbotron'>
 		<h1>&nbsp;&nbsp;Search Resoults</h1>
@@ -9,8 +10,10 @@
 		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Searched for :&nbsp; {% for term in searchTerms %} {{term}}&nbsp;{% endfor%}</h3>
 		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Found {{ peptides|length }}</h3>
 		</div>
-		{% block content %}
-		{% endblock %}
+		{% if peptides %}
+			{% block content %}
+			{% endblock %}
+		{% endif %}
 	</section>
 	{% endif %}
 	{% if not peptides%}

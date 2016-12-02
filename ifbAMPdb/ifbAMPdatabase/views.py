@@ -10,14 +10,14 @@ def home(request):
 	reqHomeBlog = homeBlog()
 	pep = peptide.objects.order_by()[:2]
 	data = {
-	'peptide':pep,
+	'peptides':pep,
 	reqHomeBlog[0]:reqHomeBlog[1]
 	}
 	return render(request, 'home.html',data )
 
 def homeData():
 	pep = peptide.objects.order_by()[:2]
-	return {'peptide': pep}
+	return {'peptides': pep}
 
 def search(request):
 	pep = peptide.objects.all()
@@ -75,7 +75,7 @@ def ampBasicSearch(request):
 
 		for qr in pep:
 			pepList.append(qr)
-		return	render(request, 'resoult.html',{'peptides':pepList, 'searchTerms':searchTerms})
+		return	render(request, 'peptide.html',{'peptides':pepList, 'searchTerms':searchTerms})
 
 
 # Loads the Advanced Search page
@@ -199,5 +199,4 @@ def advSearchResoults(request):
 			raise # Failed to append Boolean Fields
 
 
-	return render(request, 'advResoults.html', {'searchTerms':searchTerms})
-
+	return render(request, 'peptide.html', {'searchTerms':searchTerms})
