@@ -9,7 +9,7 @@
 				{% for post in posts %}
 				<hr>
 				<div class="well row">
-					<a href="{% url 'blog_post' {{post.pk}} %}"><h3>{{post.title}}</h3></a>
+					<a href="{% url 'blog_post' post.pk %}"><h3>{{post.title}}</h3></a>
 					<br>
 					<p>{{post.body|safe}}</p>
 					<br>
