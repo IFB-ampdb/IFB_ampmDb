@@ -56,7 +56,7 @@ def ampBasicSearch(request):
 
 		for qr in pep:
 			pepList.append(qr)
-		return	render(request, 'resoult.html',{'peptides':pepList, 'searchTerms':searchTerms})
+		return	render(request, 'advResoults.html',{'peptides':pepList, 'searchTerms':searchTerms})
 
 	elif not pdbId is '':
 		try:
@@ -66,7 +66,7 @@ def ampBasicSearch(request):
 
 		for qr in pep:
 			pepList.append(qr)
-		return	render(request, 'resoult.html',{'peptides':pepList, 'searchTerms':searchTerms})
+		return	render(request, 'advResoults.html',{'peptides':pepList, 'searchTerms':searchTerms})
 	else:
 		try:
 			pep = peptide.objects.filter(organism = org)
