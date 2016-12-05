@@ -62,7 +62,7 @@
 					{% for post in posts %}
 					<hr>
 					<div class="row">
-						<h3><a href="{% url 'blog_post' {{post.pk}} %}">{{post.title}}</a></h3>
+						<h3><a href="{% url 'blog_post' post.pk %}">{{post.title}}</a></h3>
 						<p>{{post.description}}</p>
 						<p>Open to Read More !</p>
 						<p>{{post.published_date}}</p>
