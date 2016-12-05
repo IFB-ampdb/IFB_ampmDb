@@ -50,7 +50,7 @@ def ampBasicSearch(request):
 	#search Conditions
 	if not pdbId is	''	and	not	org	is	'':
 		try:
-			pep = peptide.objects.filter(pdb_id = pdbId).filter(organism = org)
+			pep = peptide.objects.filter(pdb_id__icontains = pdbId).filter(organism__icontains = org)
 		except Exception as e:
 			raise #Expetion failed to filter item
 
@@ -60,7 +60,7 @@ def ampBasicSearch(request):
 
 	elif not pdbId is '':
 		try:
-			pep = peptide.objects.filter(pdb_id = pdbId)
+			pep = peptide.objects.filter(pdb_id__icontains = pdbId)
 		except Exception as e:
 			raise #failed to filter item
 
@@ -69,7 +69,7 @@ def ampBasicSearch(request):
 		return	render(request, 'advResoults.html',{'peptides':pepList, 'searchTerms':searchTerms})
 	else:
 		try:
-			pep = peptide.objects.filter(organism = org)
+			pep = peptide.objects.filter(organism__icontains = org)
 		except Exception as e:
 			raise #failed to filter item
 
