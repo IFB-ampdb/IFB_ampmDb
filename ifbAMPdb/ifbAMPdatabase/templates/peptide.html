@@ -1,5 +1,3 @@
-{% extends 'resoult.html'%}
-{% block content %}
 <div class=" container well">
   {% for peptide in peptides %}
   <h2><a href="{% url 'PeptideDetails'  peptide.pdb_id  %}">{{ peptide.pdb_id }}</a> Details</h2>
@@ -39,4 +37,3 @@
   <br>
   {% endfor %}
 </div>
-{% endblock %}
