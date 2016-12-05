@@ -11,8 +11,7 @@
 		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Found {{ peptides|length }}</h3>
 		</div>
 		{% if peptides %}
-			{% block content %}
-			{% endblock %}
+			{% include 'peptide.html'%}
 		{% endif %}
 	</section>
 	{% endif %}
