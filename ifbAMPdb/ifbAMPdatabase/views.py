@@ -199,4 +199,4 @@ def advSearchResoults(request):
 			raise # Failed to append Boolean Fields
 
 
-	return render(request, 'peptide.html', {'searchTerms':searchTerms})
+	return render(request, 'advResoults.html', {'searchTerms':searchTerms})
