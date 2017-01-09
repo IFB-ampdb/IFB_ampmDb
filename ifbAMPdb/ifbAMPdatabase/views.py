@@ -222,8 +222,8 @@ def advSearchResoults(request):
 		except Exception as e:
 			raise # Failed to append Boolean Fields
 
-		for qr in pep:
-			pepList.append(qr)
+	for qr in pep:
+		pepList.append(qr)
 
 
 	return render(request, 'resoults.html', {'peptides':pepList,'searchTerms':searchTerms})
