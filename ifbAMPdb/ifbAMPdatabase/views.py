@@ -115,7 +115,7 @@ def advSearchResults(request):
 		charge = request.GET['charge']
 		if not charge is "":
 			searchTerms.append({'Charge':charge})
-			pep = pep.filter(charge__icontains = charge)
+			pep = pep.filter(charge = charge)
 	except:
 		pass
 
@@ -123,7 +123,7 @@ def advSearchResults(request):
 		m_dipol = request.GET['m_dipol']
 		if not m_dipol is "":
 			searchTerms.append({'Dipolar Momentum':m_dipol})
-			pep = pep.filter(m_dipol__icontains = m_dipol)
+			pep = pep.filter(m_dipol = m_dipol)
 	except:
 		pass
 
@@ -131,7 +131,7 @@ def advSearchResults(request):
 		charge_amt_atm = request.GET['charge_amt_atm']
 		if not charge_amt_atm is "":
 			searchTerms.append({'Charge / Amout of Atoms':charge_amt_atm})
-			pep = pep.filter(charge_amt_atm__icontains = charge_amt_atm)
+			pep = pep.filter(charge_amt_atm = charge_amt_atm)
 	except:
 		pass
 
@@ -139,7 +139,7 @@ def advSearchResults(request):
 		m_dipol_amt_atm = request.GET['m_dipol_amt_atm']
 		if not m_dipol_amt_atm is "":
 			searchTerms.append({'Dipolar Momentum / amout of atoms':m_dipol_amt_atm})
-			pep = pep.filter(m_dipol_amt_atm__icontains = m_dipol_amt_atm)
+			pep = pep.filter(m_dipol_amt_atm = m_dipol_amt_atm)
 	except:
 		pass
 
