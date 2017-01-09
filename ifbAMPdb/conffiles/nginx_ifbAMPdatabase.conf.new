@@ -1,0 +1,83 @@
+#REVERSE PROXY
+# the upstream component nginx needs to connect to
+upstream django {
+    server unix:/home/ampdbvenv/ifbAMPdb/ifbAMPdatabase/ifbAMPdatabase.sock; # for a file socket
+    #server localhost:8001; # for a web port socket (we'll use this first)
+}
+
+upstream apache {
+    server computacaoifb.net:8000;
+}
+
+#server {
+	#listen 80;
+	#server_name computacaoifb.net www.computacaoifb.net;
+	#return 301 https://$host$request_uri;
+#}
+
+
+# configuration of the server
+server {
+    # the port your site will be served on
+    listen      80;
+    # the domain name it will serve for
+    server_name computacaoifb.net www.computacaoifb.net; # substitute your machine's IP address or FQDN
+    charset     utf-8;
+
+    #listen 443 ssl;
+    #server_name computacaoifb.net www.computacaoifb.net;
+    #ssl_certificate /etc/letsencrypt/live/com.../fullchain.pem
+    #ssl_certificate_key /etc.letsencrypt/live/com.../privkey.pem
+
+    #ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    #ssl_prefer_server_ciphers on;
+    #ssl_chiphers '';
+ 
+
+   # max upload size
+    client_max_body_size 175M;   # adjust to taste
+
+    # Django media
+    #location /media  {
+    #    alias /path/to/your/mysite/media;  # your Django project's media files - amend as required
+    #}
+
+    # Django Static
+    location /amp/static {
+        alias /home/ampdbvenv/ifbAMPdb/static; # your Django project's static files - amend as required
+    }
+
+    # Finally, send all non-media requests to the Django server.
+    location /ampdb/ {
+        uwsgi_pass  django;
+        include     /etc/nginx/uwsgi_params; # the uwsgi_params file you installed
+    }
+
+    location / {
+       
+       proxy_pass http://apache;
+       #proxy_pass http://200.130.152.123:8000;
+       include /etc/nginx/proxy_params;
+      }
+
+       location @proxy {
+                proxy_pass http://200.130.152.123:8000;
+                include /etc/nginx/proxy_params;
+       }
+       location ~* \.php$ {
+                proxy_pass http://200.130.152.123:8000;
+                include /etc/nginx/proxy_params;
+       }
+
+#    location ~ /\.ht {
+#        deny all;
+#    } 
+
+#    location ~ /.well-known {
+#        allow all;
+#    }
+
+#location ~* \.(js|css|jpg|jpeg|gif|png|svg|ico|pdf|html|htm)$ {
+#                expires      30d;
+#       }
+}
