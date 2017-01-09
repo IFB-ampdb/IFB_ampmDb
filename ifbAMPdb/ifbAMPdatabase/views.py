@@ -82,7 +82,7 @@ def ampBasicSearch(request):
 def advSearch(request):
 	return render(request, 'advSearch.html')
 
-# Collects Data from the advanced search and fech the result.
+# Collects Data from the advanced search and fetch the result.
 def advSearchResults(request):
 	searchTerms=[]
 	pepList = []
