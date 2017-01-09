@@ -164,64 +164,62 @@ def advSearchResults(request):
 		useCheckbox = request.GET['useCheckbox']
 	except:
 		 useCheckbox = False
-	if useCheckbox is 'on':
+	print("check:", useCheckbox, type(useCheckbox))
+	if useCheckbox == 'on':
+		print("box on")
 		try:
 			hairpin = request.GET['hairpin']
-			if hairpin is 'on':
+			if hairpin == 'on':
 				hairpin = True
 			else:
 				hairpin = False
 			pep = pep.filter(hairpin = hairpin)
+			searchTerms.append({'Hairpin':hairpin})
 		except:
 			pass
 		try:
 			beta_sheet = request.GET['beta_sheet']
-			if beta_sheet is 'on':
+			if beta_sheet == 'on':
 				beta_sheet = True
 			else:
 				beta_sheet = False
 			pep = pep.filter(beta_sheet = beta_sheet)
+			searchTerms.append({'Beta Sheet':beta_sheet})
 		except:
 			pass
 
 		try:
 			alpha_helix = request.GET['alpha_helix']
-			if alpha_helix is 'on':
+			if alpha_helix == 'on':
 				alpha_helix = True
 			else:
 				alpha_helix = False
 			pep = pep.filter(alpha_helix = alpha_helix)
+			searchTerms.append({'Aplha Helix':alpha_helix})
 		except:
 			pass
 
 		try:
 			alpha_helix_beta_sheet = request.GET['alpha_helix_beta_sheet']
-			if alpha_helix_beta_sheet is 'on':
+			if alpha_helix_beta_sheet == 'on':
 				alpha_helix_beta_sheet = True
 			else:
 				alpha_helix_beta_sheet = False
 			pep = pep.filter(alpha_helix_beta_sheet = alpha_helix_beta_sheet)
+			searchTerms.append({'Alpha Helix Beta Sheet':alpha_helix_beta_sheet})
 		except:
 			pass
 
 		try:
 			alpha_helix_beta_sheet_hairpin = request.GET['alpha_helix_beta_sheet_hairpin']
-			if alpha_helix_beta_sheet_hairpin in 'on':
+			if alpha_helix_beta_sheet_hairpin == 'on':
 				alpha_helix_beta_sheet_hairpin = True
 			else:
 				alpha_helix_beta_sheet_hairpin = False
 			pep = pep.filter(alpha_helix_beta_sheet_hairpin = alpha_helix_beta_sheet_hairpin)
+			searchTerms.append({'Alpha Helix Beta Sheet Hairpin':alpha_helix_beta_sheet_hairpin})
 		except:
 			pass
-
-		try:
-			searchTerms.append({'Hairpin':hairpin})
-			searchTerms.append({'Beta Sheet':beta_sheet})
-			searchTerms.append({'Aplha Helix':alpha_helix})
-			searchTerms.append({'Alpha Helix Beta Sheet':alpha_helix_beta_sheet})
-			searchTerms.append({'Alpha Helix Beta Sheet Hairpin':alpha_helix_beta_sheet_hairpin})
-		except Exception as e:
-			raise # Failed to append Boolean Fields
 
 	for qr in pep:
 		pepList.append(qr)
