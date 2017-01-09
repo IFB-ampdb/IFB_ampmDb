@@ -92,7 +92,7 @@ def advSearchResults(request):
 		pdb_id = request.GET['pdb_id']
 		if not pdb_id is "":
 			searchTerms.append({'PDB iD': pdb_id})
-		pep = pep.filter(pdb_id__icontains = pdb_id)
+			pep = pep.filter(pdb_id__icontains = pdb_id)
 	except:
 		pass
 
@@ -100,7 +100,7 @@ def advSearchResults(request):
 		hfobic_area = request.GET['hfobic_area']
 		if not hfobic_area is "":
 			searchTerms.append({'Hidrofobic Area':hfobic_area})
-		pep = pep.filter(hfobic_area__icontains = hfobic_area)
+			pep = pep.filter(hfobic_area__icontains = hfobic_area)
 	except:
 		pass
 
@@ -108,14 +108,14 @@ def advSearchResults(request):
 		hfobic_avg = request.GET['hfobic_avg']
 		if not hfobic_avg is "":
 			searchTerms.append({'Average Hidrofobicity':hfobic_avg})
-		pep = pep.filter(hfobic_avg__icontains = hfobic_avg)
+			pep = pep.filter(hfobic_avg__icontains = hfobic_avg)
 	except:
 		pass
 	try:
 		charge = request.GET['charge']
 		if not charge is "":
 			searchTerms.append({'Charge':charge})
-		pep = pep.filter(charge__icontains = charge)
+			pep = pep.filter(charge__icontains = charge)
 	except:
 		pass
 
@@ -123,7 +123,7 @@ def advSearchResults(request):
 		m_dipol = request.GET['m_dipol']
 		if not m_dipol is "":
 			searchTerms.append({'Dipolar Momentum':m_dipol})
-		pep = pep.filter(m_dipol__icontains = m_dipol)
+			pep = pep.filter(m_dipol__icontains = m_dipol)
 	except:
 		pass
 
@@ -131,7 +131,7 @@ def advSearchResults(request):
 		charge_amt_atm = request.GET['charge_amt_atm']
 		if not charge_amt_atm is "":
 			searchTerms.append({'Charge / Amout of Atoms':charge_amt_atm})
-		pep = pep.filter(charge_amt_atm__icontains = charge_amt_atm)
+			pep = pep.filter(charge_amt_atm__icontains = charge_amt_atm)
 	except:
 		pass
 
@@ -139,7 +139,7 @@ def advSearchResults(request):
 		m_dipol_amt_atm = request.GET['m_dipol_amt_atm']
 		if not m_dipol_amt_atm is "":
 			searchTerms.append({'Dipolar Momentum / amout of atoms':m_dipol_amt_atm})
-		pep = pep.filter(m_dipol_amt_atm__icontains = m_dipol_amt_atm)
+			pep = pep.filter(m_dipol_amt_atm__icontains = m_dipol_amt_atm)
 	except:
 		pass
 
@@ -147,7 +147,7 @@ def advSearchResults(request):
 		sequence = request.GET['sequence']
 		if not sequence is "":
 			searchTerms.append({'Sequence':sequence})
-		pep = pep.filter(sequence = sequence)
+			pep = pep.filter(sequence = sequence)
 	except:
 		pass
 
@@ -155,7 +155,7 @@ def advSearchResults(request):
 		organism = request.GET['organism']
 		if not organism is "":
 			searchTerms.append({'Organism':organism})
-		pep = pep.filter(organism = organism)
+			pep = pep.filter(organism = organism)
 	except:
 		pass
 
