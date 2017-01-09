@@ -28,7 +28,7 @@ def detail(request,pk):
 	return render(request,'detail.html', {'peptide' : pep})
 
 
-# Collects data from the Basic search in the Home Page and displays in the Resoult page.
+# Collects data from the Basic search in the Home Page and displays in the Result page.
 def ampBasicSearch(request):
 	pdbId = None
 	org = None
@@ -56,7 +56,7 @@ def ampBasicSearch(request):
 
 		for qr in pep:
 			pepList.append(qr)
-		return	render(request, 'resoults.html',{'peptides':pepList, 'searchTerms':searchTerms})
+		return	render(request, 'results.html',{'peptides':pepList, 'searchTerms':searchTerms})
 
 	elif not pdbId is '':
 		try:
@@ -66,24 +66,24 @@ def ampBasicSearch(request):
 
 		for qr in pep:
 			pepList.append(qr)
-		return	render(request, 'resoults.html',{'peptides':pepList, 'searchTerms':searchTerms})
+		return	render(request, 'results.html',{'peptides':pepList, 'searchTerms':searchTerms})
 	else:
 		try:
-			pep = peptide.objects.filter(organism__icontains = org)
+			pep = peptide.objects.filter(organism = org)
 		except Exception as e:
 			raise #failed to filter item
 
 		for qr in pep:
 			pepList.append(qr)
-		return	render(request, 'resoults.html',{'peptides':pepList, 'searchTerms':searchTerms})
+		return	render(request, 'results.html',{'peptides':pepList, 'searchTerms':searchTerms})
 
 
 # Loads the Advanced Search page
 def advSearch(request):
 	return render(request, 'advSearch.html')
 
-# Collects Data from the advanced search and fech the resoult.
-def advSearchResoults(request):
+# Collects Data from the advanced search and fech the result.
+def advSearchResults(request):
 	searchTerms=[]
 	pepList = []
 	pep = peptide.objects
@@ -147,7 +147,7 @@ def advSearchResoults(request):
 		sequence = request.GET['sequence']
 		if not sequence is "":
 			searchTerms.append({'Sequence':sequence})
-		pep = pep.filter(sequence__icontains = sequence)
+		pep = pep.filter(sequence = sequence)
 	except:
 		pass
 
@@ -155,6 +155,7 @@ def advSearchResoults(request):
 		organism = request.GET['organism']
 		if not organism is "":
 			searchTerms.append({'Organism':organism})
+		pep = pep.filter(organism = organism)
 	except:
 		pass
 
@@ -170,7 +171,7 @@ def advSearchResoults(request):
 				hairpin = True
 			else:
 				hairpin = False
-			pep = pep.filter(hairpin__icontains = hairpin)
+			pep = pep.filter(hairpin = hairpin)
 		except:
 			pass
 		try:
@@ -179,7 +180,7 @@ def advSearchResoults(request):
 				beta_sheet = True
 			else:
 				beta_sheet = False
-			pep = pep.filter(beta_sheet__icontains = beta_sheet)
+			pep = pep.filter(beta_sheet = beta_sheet)
 		except:
 			pass
 
@@ -189,7 +190,7 @@ def advSearchResoults(request):
 				alpha_helix = True
 			else:
 				alpha_helix = False
-			pep = pep.filter(alpha_helix__icontains = alpha_helix)
+			pep = pep.filter(alpha_helix = alpha_helix)
 		except:
 			pass
 
@@ -199,7 +200,7 @@ def advSearchResoults(request):
 				alpha_helix_beta_sheet = True
 			else:
 				alpha_helix_beta_sheet = False
-			pep = pep.filter(alpha_helix_beta_sheet__icontains = alpha_helix_beta_sheet)
+			pep = pep.filter(alpha_helix_beta_sheet = alpha_helix_beta_sheet)
 		except:
 			pass
 
@@ -209,7 +210,7 @@ def advSearchResoults(request):
 				alpha_helix_beta_sheet_hairpin = True
 			else:
 				alpha_helix_beta_sheet_hairpin = False
-			pep = pep.filter(alpha_helix_beta_sheet_hairpin__icontains = alpha_helix_beta_sheet_hairpin)
+			pep = pep.filter(alpha_helix_beta_sheet_hairpin = alpha_helix_beta_sheet_hairpin)
 		except:
 			pass
 
@@ -226,4 +227,4 @@ def advSearchResoults(request):
 		pepList.append(qr)
 
 
-	return render(request, 'resoults.html', {'peptides':pepList,'searchTerms':searchTerms})
+	return render(request, 'results.html', {'peptides':pepList,'searchTerms':searchTerms})

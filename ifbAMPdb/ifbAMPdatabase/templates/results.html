@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
-{% block title %}Resoults{% endblock %}
+{% block title %}Results{% endblock %}
 {% block content %}
 {% load staticfiles %}
 
 {% if searchTerms %}
 <section>
 	<div class='jumbotron'>
-		<h1>&nbsp;&nbsp;Search Resoults</h1>
+		<h1>&nbsp;&nbsp;Search Results</h1>
 		<br>
 		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Searched for :&nbsp; {% for term in searchTerms %} {{term}}&nbsp;{% endfor%}</h3>
 		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Found {{ peptides|length }}</h3>
