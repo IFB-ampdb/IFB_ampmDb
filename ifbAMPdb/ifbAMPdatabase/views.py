@@ -30,52 +30,34 @@ def detail(request,pk):
 
 # Collects data from the Basic search in the Home Page and displays in the Result page.
 def ampBasicSearch(request):
-	pdbId = None
-	org = None
-	searchTerms = []
+	searchTerms=[]
 	pepList = []
-	#Search items
+	pep = peptide.objects
+	#data Fields
 	try:
-		if 'pdbId' in request.POST:
-			pdbId = request.POST['pdbId']
-			if not pdbId is '':
-				searchTerms.append(pdbId)
-		if 'org' in request.POST:
-			org = request.POST['org']
-			if not org is '':
-				searchTerms.append(org)
-	except Exception as e:
-		raise #treatment
+		pdb_id = request.GET['pdb_id']
+		if not pdb_id is "":
+			searchTerms.append({'PDB iD': pdb_id})
+			pep = pep.filter(pdb_id__icontains = pdb_id)
+	except:
+		pass
+		
+	try:
+		organism = request.GET['organism']
+		if not organism is "":
+			searchTerms.append({'Organism':organism})
+			pep = pep.filter(organism = organism)
+	except:
+		pass
 
-	#search Conditions
-	if not pdbId is	''	and	not	org	is	'':
-		try:
-			pep = peptide.objects.filter(pdb_id__icontains = pdbId).filter(organism__icontains = org)
-		except Exception as e:
-			raise #Expetion failed to filter item
+	for qr in pep:
+		pepList.append(qr)
 
-		for qr in pep:
-			pepList.append(qr)
-		return	render(request, 'results.html',{'peptides':pepList, 'searchTerms':searchTerms})
 
-	elif not pdbId is '':
-		try:
-			pep = peptide.objects.filter(pdb_id__icontains = pdbId)
-		except Exception as e:
-			raise #failed to filter item
+	return render(request, 'results.html', {'peptides':pepList,'searchTerms':searchTerms})
 
-		for qr in pep:
-			pepList.append(qr)
-		return	render(request, 'results.html',{'peptides':pepList, 'searchTerms':searchTerms})
-	else:
-		try:
-			pep = peptide.objects.filter(organism = org)
-		except Exception as e:
-			raise #failed to filter item
 
-		for qr in pep:
-			pepList.append(qr)
-		return	render(request, 'results.html',{'peptides':pepList, 'searchTerms':searchTerms})
+
 
 
 # Loads the Advanced Search page
