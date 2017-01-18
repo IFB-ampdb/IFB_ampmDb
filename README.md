@@ -18,11 +18,10 @@ This project was built using the Django Framework. And it it separated in two 'w
  
 ![image](ifbAMPdb/image/demonstration.gif)
 
-In the future, we plan to add:
+#TODO:
+- favicon,
 - Custom search with a shell script,
 - Custom SQL search in a web page
-
-
 
 # Objective:
 #### This project aims to decrease the costs of *in-silico* antibiotic research. How ? Read the scientific text below.
