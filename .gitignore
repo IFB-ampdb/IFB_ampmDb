@@ -3,3 +3,5 @@ __pycache__
 .DS_Store
 pyVenvIFBAMPDB
 blog/migrations/*
+ifbAMPdb/ifbAMPdatabase/settings.py
+ifbAMPdb/amp.log
