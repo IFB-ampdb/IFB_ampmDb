@@ -13,7 +13,7 @@
 						<div class="form-group">
 						<label for="pdb_id" class="control-label"> PDB ID</label>
 						<div class="input-group">
-							<input type="text" class="form-control" name="pdbId" aria-describedby="basic-addon1">
+							<input type="text" class="form-control" name="pdb_id" aria-describedby="basic-addon1">
 						</div>
 					</div>
 					<p>
@@ -22,7 +22,7 @@
 					<div class="form-group">
 						<label for="Organism" class="control-label"> Organism</label>
 						<div class="input-group">
-							<input type="text" class="form-control" name="org" aria-describedby="basic-addon1">
+							<input type="text" class="form-control" name="organism" aria-describedby="basic-addon1">
 						</div>
 					</div>
 					<p class="text-center"><button class="btn btn-success" type="submit" >Search</button></p>
@@ -48,16 +48,16 @@
 	</section>
 	<hr>
 	<section>
-		<div class="jumbotron container">
-			<div class="row">
-				<div class="col-xs-12 col-md-3">
+		<div class="jumbotron">
+			<div class="row well">
+				<div class="col-xs-12 col-md-3 container">
 				<h1 style="margin-top: -15px"><span class="fa fa-github"></span>&nbsp;</h1>
 				<h2>Contribute on GitHub!</h2>
 				<p><a href="https://github.com/auyer/IFB_ampmDb">github.com/auyer/IFB_ampmDb</a></p>
 				<p>Submit your Issues or try to solve others !</p>
 				<p>Check the guide on how to contribute in our repository page.</p>
 				</div>
-				<div class="col-xs-12 col-md-offset-1 col-md-8">
+				<div class="col-xs-12 col-md-offset-1 col-md-8 container">
 					<h2>Latest Posts in our <a href="{% url 'blog'%}">Blog</a></h3>
 					<ul>
 					{% for post in posts %}
@@ -73,6 +73,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
 {% endblock %}
