@@ -13,7 +13,11 @@
 		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Found {{ peptides|length }}</h3>
 		</div>
 		{% if peptides %}
-			{% include 'searchEngine/peptide.html'%}
+		<div class=" container well">
+			{% for peptide in peptides %}
+				{% include 'searchEngine/peptide.html'%}
+			{% endfor %}
+		</div>
 		{% endif %}
 	</section>
 	{% endif %}
