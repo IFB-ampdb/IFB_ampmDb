@@ -11,7 +11,7 @@
 				<form	id="ampBasicSearch" action="{% url 'SearchResults' %}" method="GET" accept-charset="utf-8" class="form-horizontal">
 				{% csrf_token %}
 						<div class="form-group">
-						<label for="id" class="control-label">&nbsp;PDB ID</label>
+						<label for="pdb_id" class="control-label"> PDB ID</label>
 						<div class="input-group">
 							<input type="text" class="form-control" name="pdbId" aria-describedby="basic-addon1">
 						</div>
@@ -20,7 +20,7 @@
 						And / Or
 					</p>
 					<div class="form-group">
-						<label for="name" class="control-label">&nbsp;Organism</label>
+						<label for="Organism" class="control-label"> Organism</label>
 						<div class="input-group">
 							<input type="text" class="form-control" name="org" aria-describedby="basic-addon1">
 						</div>
