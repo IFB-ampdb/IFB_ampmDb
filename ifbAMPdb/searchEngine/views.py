@@ -1,12 +1,12 @@
 from django.shortcuts import render, get_object_or_404, render_to_response
 from searchEngine.models import peptide
 
-# Create your views here.
-
+# Returns data in a dictionary with a list of 2 Peptides
 def homeData():
         pep = peptide.objects.order_by()[:2]
         return {'peptides': pep}
 
+#Renders the detail page for a known peptide
 def detail(request,pk):
 	pep = get_object_or_404(peptide, pdb_id = pk)
 	return render(request,'searchEngine/detail.html', {'peptide' : pep})
