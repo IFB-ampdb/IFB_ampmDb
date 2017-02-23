@@ -3,6 +3,10 @@ from searchEngine.models import peptide
 
 # Create your views here.
 
+def homeData():
+        pep = peptide.objects.order_by()[:2]
+        return {'peptides': pep}
+
 def detail(request,pk):
 	pep = get_object_or_404(peptide, pdb_id = pk)
 	return render(request,'searchEngine/detail.html', {'peptide' : pep})
