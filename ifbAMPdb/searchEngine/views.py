@@ -10,7 +10,6 @@ def detail(request,pk):
 #collects data from the Basic search in the Home Page and displays in the Result page.
 def ampBasicSearch(request):
         searchTerms=[]
-        pepList = []
         pep = peptide.objects
         #data Fields
         try:
@@ -29,11 +28,7 @@ def ampBasicSearch(request):
         except:
                 pass
 
-        for qr in pep:
-                pepList.append(qr)
-
-
-        return render(request, 'searchEngine/results.html', {'peptides':pepList,'searchTerms':searchTerms})
+        return render(request, 'searchEngine/results.html', {'peptides':pep,'searchTerms':searchTerms})
 
 # Loads the Advanced Search page
 def advSearch(request):
@@ -42,7 +37,6 @@ def advSearch(request):
 # Collects Data from the advanced search and fetch the result.
 def advSearchResults(request):
         searchTerms=[]
-        pepList = []
         pep = peptide.objects
         #data Fields
         try:
@@ -179,9 +173,5 @@ def advSearchResults(request):
                 except:
                         pass
 
-        for qr in pep:
-                pepList.append(qr)
-
-
-        return render(request, 'searchEngine/results.html', {'peptides':pepList,'searchTerms':searchTerms})
+        return render(request, 'searchEngine/results.html', {'peptides':pep,'searchTerms':searchTerms})
 

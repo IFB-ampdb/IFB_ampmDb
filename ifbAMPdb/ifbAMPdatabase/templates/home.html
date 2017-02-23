@@ -8,7 +8,7 @@
 		<div class="col-lg-3 col-md-5 col-md-offset-0 col-lg-offset-0">
 			<div class="well">
 				<h3 class="text-center">Quick Search</h3>
-				<form	id="ampBasicSearch" action="{% url 'SearchResults' %}" method="POST" accept-charset="utf-8" class="form-horizontal">
+				<form	id="ampBasicSearch" action="{% url 'SearchResults' %}" method="GET" accept-charset="utf-8" class="form-horizontal">
 				{% csrf_token %}
 						<div class="form-group">
 						<label for="id" class="control-label">&nbsp;PDB ID</label>
