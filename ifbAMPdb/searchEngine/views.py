@@ -115,9 +115,7 @@ def advSearchResults(request):
                 useCheckbox = request.GET['useCheckbox']
         except:
                  useCheckbox = False
-        print("check:", useCheckbox, type(useCheckbox))
         if useCheckbox == 'on':
-                print("box on")
                 try:
                         hairpin = request.GET['hairpin']
                         if hairpin == 'on':
@@ -174,4 +172,3 @@ def advSearchResults(request):
                         pass
 
         return render(request, 'searchEngine/results.html', {'peptides':pep,'searchTerms':searchTerms})
-
