@@ -8,12 +8,12 @@
 	<div class='jumbotron'>
 		<h1>&nbsp;&nbsp;Search Results</h1>
 		<br>
-		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Searched for :&nbsp;</h3> 
+		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Searched for :&nbsp;</h3>
 		<ul>{% for term in searchTerms %}<p> {{term}}&nbsp;</p>{% endfor%}</ul>
 		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Found {{ peptides|length }}</h3>
 		</div>
 		{% if peptides %}
-			{% include 'peptide.html'%}
+			{% include 'searchEngine/peptide.html'%}
 		{% endif %}
 	</section>
 	{% endif %}
